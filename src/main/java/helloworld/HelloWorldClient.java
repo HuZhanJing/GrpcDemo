@@ -167,11 +167,11 @@ public class HelloWorldClient {
         .build();
     try {
       HelloWorldClient client = new HelloWorldClient(channel);
-//      client.greet(user + 0, 0);
-//      client.multiReplay();
-//      client.multiHello();
+      client.greet(user + 0, 0);
+      client.multiReplay();
+      client.multiHello();
       client.multiHelloMultiReplay();
-//      client.testGHello("xiao ming", 12);
+      client.testGHello("xiao ming", 12);
       Thread.sleep(100000);
 //      Long currentTime = System.currentTimeMillis();
 //      logger.info(currentTime.toString());
