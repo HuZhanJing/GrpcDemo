@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+// true，为每个类生成单独的java文件，否则只生成一个java文件
+option java_multiple_files = true;
+
+// class的输出名字，如果不设置，则使用proto文件的名字
+option java_outer_classname = "HelloWorldProto";
+
+// package，包名，java_package，输出路径，如果不设置java_package，则输出到package下
+//package helloworld;
+ option java_package = "helloworld.rpc";
+
+
+service Greeter {
+  // Sends a greeting
+  rpc SayHello(HelloRequest) returns (HelloReply) {}
+
+  // 一个hello，多个replay
+  rpc MultiReplay(HelloRequest) returns (stream HelloReply) {}
+
+  // 多个hello，一个replay
+  rpc MultiHello(stream HelloRequest) returns (HelloReply) {}
+
+  // 多个hello，多个replay
+  rpc MultiHelloMultiReplay(stream HelloRequest) returns (stream HelloReply) {}
+}
+
+service TestG {
+  // test
+  rpc TestHello(HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+  int32 age = 2;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+  int32 age = 2;
+}
