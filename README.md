@@ -9,8 +9,7 @@
    Maven生成对象命令： mvn protobuf:compile
    Maven生成rpc class命令：mvn protobuf:compile-custom
 
-3. 调用过程
-	
+3. protobuf版本: 3.19.4
 	
 
 ##### 二、代码
